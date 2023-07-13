@@ -1,28 +1,37 @@
 grammar simplified_java;
 
-init: func+;
-func: (ID '(' ')' | 'main') ':' dec comd* 'end';
+init: func* func_main;
 
-dec: 'var' ':' (var|const)+; // declaração de variáveis
-var: ID ':' ('int' | 'float' | 'str' | 'bool')';';
-const: 'const' ID '=' type ';';
-type: INT | FLOAT | STR | BOOL;
+func: ID '(' parameters_list ')' ':' (type | 'void') dec? (comd | inst)* 'end'; // comandos ou instâncias de funções
+func_main: 'main' ':' dec? (comd|inst)* 'end';
+parameters_list: ( ( type ID ) (',' type ID)* )?;
 
-comd: if | assign | while | return;
+type: ('int' | 'float' | 'str' | 'bool' );
+
+dec: 'var' ':' (dec_var | dec_const)+; // declaração de variáveis
+dec_var: ID (',' ID)* ':' type ';';
+dec_const: 'const' ID '=' value ';';
+value: inst_op | INT | FLOAT | STR | BOOL; // valor que pode ser int float str ou bool ou retorno de função
+
+inst: (ID | 'print' | 'scanf') '(' ((ID | value | exp) (',' (ID | value | exp))*)? ')' ';'; // instância de função. Limitação de recursividade na semântica
+inst_op: (ID | 'print' | 'scanf') '(' ((ID | value | exp) (',' (ID | value | exp))*) ')'; // instância de função dentro de uma operação
+comd: if | assign | while | return | exp | break;
+
 assign: ID '=' exp ';'; // Erro de atribuição feito na semantica
-return: 'return' (ID | type) ';';
+return: 'return' (ID | value | exp) ';';
 
-if: 'if' '(' exp ')' ':' block else? 'end';
-else: 'else' ':' block;
+if: 'if' '(' exp ')' ':' (comd | inst)* else? 'end';
+else: 'else' ':' (comd | inst)*;
 
-exp: 'seil';
+exp: inst_op | exp op exp | INT | ID | '(' exp ')' ;
+op: '!' | '-' | '+' | '*' | '/' | '==' | '!=' | '>=' | '<=' | '>' | '<';
 
-while: 'while' '(' exp ')' ':' block 'end';
-block: 'block';
+while: 'while' '(' exp ')' ':' (comd | inst)* 'end';
+break: 'break' ';';
 
 INT: [0-9]+;
 FLOAT: [0-9]+ '.' [0-9]+;
-STR: '"' [ a-zA-Z0-9"]* '"'; // colocar pontuação e acentuação
+STR: '"' [a-záàâãäéèêëíìîïóòôõöúùûüçA-ZÁÀÂÃÄÉÈÊËÍÌÎÏÓÒÔÕÖÚÙÛÜÇ 0-9_,.:;´`~^?]* '"';
 BOOL: 'True' | 'False';
 
 ID: [a-zA-Z][a-zA-Z_0-9]*;
