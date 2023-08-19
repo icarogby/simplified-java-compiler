@@ -17,7 +17,7 @@ comd: if | assign | while | return | break | inst ';' ;
 
 // instância de função
 inst: ID '(' value_list? ')' ;
-value_list: ( (ID | value | exp) ( ',' (ID | value | exp) )* ) ;
+value_list: ( (ID | value | inst | exp) ( ',' (ID | value | inst| exp) )* ) ;
 
 assign: ID '=' exp ';'; // Erro de atribuição feito na semantica
 return: 'return' (ID | value | exp) ';';
@@ -62,4 +62,4 @@ comment: LINE_COMMENT | BLOCK_COMMENT ;
 LINE_COMMENT: '//' ~[\r\n]* -> channel(HIDDEN) ;
 BLOCK_COMMENT: '/*' .*? '*/' -> channel(HIDDEN) ;
 
-WS: [ \t\n] -> skip;
+WS: [ \t\n\r] -> skip;
