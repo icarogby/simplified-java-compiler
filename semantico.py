@@ -5,7 +5,7 @@ class analizadorSemantico(simplified_javaVisitor):
     funcTable = {}
 
     def __init__(self):
-        self.funcTable = {'main': None}
+        self.funcTable = {'main': {"funcType": 'void', "funcParameters": {}, "funcDecs": []}}
 
     def defineType(self, value: str):
         if value == "true" or value == "false":
@@ -19,6 +19,26 @@ class analizadorSemantico(simplified_javaVisitor):
                 return 'float'
             except ValueError:
                 return 'str'
+    def funcIdInUse(self, funcId):
+        if funcId in self.funcTable:
+            return True
+        else:
+            return False
+
+    def varConstIdInUse(self, funcId, varConstId):
+        funcInfo = self.funcTable[funcId]
+        print(funcInfo['funcDecs'])
+
+        #for dec in funcDecs:
+            # if dec[0] == varConstId:
+            #     return True
+
+        return False
+
+        # if id in self.funcTable[funcId]['funcDecs']:
+        #     return True
+        # else:
+        #     return False
 
         # Visit a parse tree produced by simplified_javaParser#decFunc.
     def visitDecFunc(self, ctx: simplified_javaParser.DecFuncContext):
@@ -26,25 +46,26 @@ class analizadorSemantico(simplified_javaVisitor):
         funcType = ctx.funcType().getText()
         funcParameters = self.visitParametersList(ctx.parametersList())
 
-        try:
-            funcDecs = self.visitVarField(ctx.varField())
-        except:
+        if ctx.varField():
+            funcDecs = self.visitVarField(ctx.varField(), funcID)
+        else:
             funcDecs = []
 
-        # todo verificar se id esta na lista
-        self.funcTable[funcID] = {"funcType": funcType, "funcParameters": funcParameters, "funcDecs": funcDecs}
+        if self.funcIdInUse(funcID):
+            raise Exception(f"Function ID {funcID} already in use.")
+        else:
+            self.funcTable[funcID] = {"funcType": funcType, "funcParameters": funcParameters, "funcDecs": funcDecs}
 
     def visitFuncMain(self, ctx:simplified_javaParser.FuncMainContext):
         funcID = 'main'
         funcType = 'void'
         funcParameters = {}
 
-        try:
-            funcDecs = self.visitVarField(ctx.varField())
-        except:
+        if ctx.varField():
+            funcDecs = self.visitVarField(ctx.varField(), funcID)
+        else:
             funcDecs = []
 
-        # todo verificar se id esta na lista
         self.funcTable[funcID] = {"funcType": funcType, "funcParameters": funcParameters, "funcDecs": funcDecs}
 
     def visitParametersList(self, ctx):
@@ -55,14 +76,23 @@ class analizadorSemantico(simplified_javaVisitor):
 
         return paramList
 
-    def visitVarField(self, ctx):
-        decList = []
+    def visitVarField(self, ctx, funcID):
+        decList = [] # lista que vai guardar as informações das variaveis e constantes em outras listas
 
         for i in ctx.decVarConst():
-            try:
+            if i.decVar():
                 for var in self.visitDecVar(i):
+                    IDs = [x[0] for x in decList]
+                    if var[0] in IDs:
+                        raise Exception(f"Variable ID {var[0]} already in use in this scope.")
+
                     decList.append(var)
-            except:
+            else:
+                const = self.visitDecConst(i)
+
+                if const[0] in [x[0] for x in decList]:
+                    raise Exception(f"Constant ID {self.visitDecConst(i)[0]} already in use.")
+
                 decList.append(self.visitDecConst(i))
 
         return decList

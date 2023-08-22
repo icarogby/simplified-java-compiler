@@ -1,13 +1,14 @@
-fatorial (int fat) : int
+fa (int fat) : int
  var:
     const PI = 3.14;
 end
 
-mostrarMedia (int v1, int v2) : void
+fai (int v1, int v2) : void
     var:
         n1, n2 : float;
-        y : int;
+        top : int;
         const PI = 3.14;
+        PI : float;
 
 end
 
