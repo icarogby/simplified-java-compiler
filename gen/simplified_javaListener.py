@@ -80,12 +80,12 @@ class simplified_javaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by simplified_javaParser#decVarConstList.
-    def enterDecVarConstList(self, ctx:simplified_javaParser.DecVarConstListContext):
+    # Enter a parse tree produced by simplified_javaParser#decVarConst.
+    def enterDecVarConst(self, ctx:simplified_javaParser.DecVarConstContext):
         pass
 
-    # Exit a parse tree produced by simplified_javaParser#decVarConstList.
-    def exitDecVarConstList(self, ctx:simplified_javaParser.DecVarConstListContext):
+    # Exit a parse tree produced by simplified_javaParser#decVarConst.
+    def exitDecVarConst(self, ctx:simplified_javaParser.DecVarConstContext):
         pass
 
 

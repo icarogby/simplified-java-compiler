@@ -16,5 +16,6 @@ main:
     var:
         numero : int;
         n1, n2 : int;
+        const seila = 234;
     
 end

@@ -4,10 +4,12 @@ from gen.simplified_javaParser import simplified_javaParser
 class analizadorSemantico(simplified_javaVisitor):
     symbolTable = {}
     parameterTable = {}
+    funcTable = {}
 
     def __init__(self):
         self.symbolTable = {}
         self.parameterTable = {}
+        self.funcTable = {}
 
     def defineType(self, value: str):
         if value == "true" or value == "false":
@@ -26,23 +28,39 @@ class analizadorSemantico(simplified_javaVisitor):
     def visitDecFunc(self, ctx: simplified_javaParser.DecFuncContext):
         funcID = ctx.ID().getText()
         funcType = ctx.funcType().getText()
+        funcParameters = self.visitParametersList(ctx.parametersList())
+
+        try:
+            funcDecs = self.visitVarField(ctx.varField())
+        except:
+            funcDecs = {}
 
         # todo verificar se id esta na lista
-        self.symbolTable[funcID] = ["func", funcType]
-        print(self.symbolTable)  ###################################################
+        self.funcTable[funcID] = {"funcType": funcType, "funcParameters": funcParameters, "funcDecs": funcDecs}
 
-        print(f"bbbbbbbbbbbbbbbbb   {self.visitParametersList(ctx.parametersList())}")
+        print(self.funcTable)  ###################################################
 
-        return self.visitChildren(ctx)
+    def visitParametersList(self, ctx):
+        paramList = {}
 
-    def visitParametersList(self, ctx:simplified_javaParser.ParametersListContext):
-        paramList = []
         for dataType, ID in zip(ctx.dataType(), ctx.ID()):
-            paramList.append((dataType.getText(), ID.getText()))
+            paramList[ID.getText()] = dataType.getText()
 
         return paramList
 
+    def visitVarField(self, ctx):
+        decList = []
+
+        for i in ctx.decVarConst():
+            try:
+                print(self.visitDecVar(i))
+            except:
+                print(self.visitDecConst(i))
+
+        return decList
+
     def visitDecVar(self, ctx: simplified_javaParser.DecVarContext):
+        vars = []
         variables, varType = ctx.getText().split(":")
 
         variables = variables.split(",")
@@ -50,9 +68,9 @@ class analizadorSemantico(simplified_javaVisitor):
 
         for variable in variables:
             #  TODO checar se ja tem o id na tabela de simbolos
-            self.symbolTable[variable] = ["var", varType, None]
-        print(self.symbolTable) ##################################################
-        return self.visitChildren(ctx)
+            vars.append([variable, "var", varType, None])
+
+        return vars
 
     # Visit a parse tree produced by simplified_javaParser#decConst.
     def visitDecConst(self, ctx: simplified_javaParser.DecConstContext):
@@ -60,6 +78,4 @@ class analizadorSemantico(simplified_javaVisitor):
         ID, value = decConst.split("=", 1)
 
         #  TODO checar se ja tem o id na tabela de simbolos
-        self.symbolTable[ID] = ["const", self.defineType(value), value]
-        print(self.symbolTable)  ###################################################################
-        return self.visitChildren(ctx)
+        return [ID, "const", self.defineType(value), value]

@@ -49,8 +49,8 @@ class simplified_javaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by simplified_javaParser#decVarConstList.
-    def visitDecVarConstList(self, ctx:simplified_javaParser.DecVarConstListContext):
+    # Visit a parse tree produced by simplified_javaParser#decVarConst.
+    def visitDecVarConst(self, ctx:simplified_javaParser.DecVarConstContext):
         return self.visitChildren(ctx)
 
 

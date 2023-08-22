@@ -12,8 +12,8 @@ parametersList: ((dataType ID )(',' dataType ID)*)?;
 funcType: 'int' | 'float' | 'str' | 'bool' | 'void';
 dataType: 'int' | 'float' | 'str' | 'bool' ;
 
-varField: 'var' ':' decVarConstList; // declaração de variáveis
-decVarConstList: (decVar | decConst)+;
+varField: 'var' ':' decVarConst+; // declaração de variáveis
+decVarConst: decVar | decConst;
 decVar: ID (',' ID)* ':' dataType ';';
 decConst: 'const' ID '=' value ';';
 value: INT | FLOAT | STR | BOOL; // valor que pode ser int float str ou bool ou retorno de função
