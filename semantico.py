@@ -2,14 +2,10 @@ from gen.simplified_javaVisitor import simplified_javaVisitor
 from gen.simplified_javaParser import simplified_javaParser
 
 class analizadorSemantico(simplified_javaVisitor):
-    symbolTable = {}
-    parameterTable = {}
     funcTable = {}
 
     def __init__(self):
-        self.symbolTable = {}
-        self.parameterTable = {}
-        self.funcTable = {}
+        self.funcTable = {'main': None}
 
     def defineType(self, value: str):
         if value == "true" or value == "false":
@@ -33,12 +29,23 @@ class analizadorSemantico(simplified_javaVisitor):
         try:
             funcDecs = self.visitVarField(ctx.varField())
         except:
-            funcDecs = {}
+            funcDecs = []
 
         # todo verificar se id esta na lista
         self.funcTable[funcID] = {"funcType": funcType, "funcParameters": funcParameters, "funcDecs": funcDecs}
 
-        print(self.funcTable)  ###################################################
+    def visitFuncMain(self, ctx:simplified_javaParser.FuncMainContext):
+        funcID = 'main'
+        funcType = 'void'
+        funcParameters = {}
+
+        try:
+            funcDecs = self.visitVarField(ctx.varField())
+        except:
+            funcDecs = []
+
+        # todo verificar se id esta na lista
+        self.funcTable[funcID] = {"funcType": funcType, "funcParameters": funcParameters, "funcDecs": funcDecs}
 
     def visitParametersList(self, ctx):
         paramList = {}
@@ -53,9 +60,10 @@ class analizadorSemantico(simplified_javaVisitor):
 
         for i in ctx.decVarConst():
             try:
-                print(self.visitDecVar(i))
+                for var in self.visitDecVar(i):
+                    decList.append(var)
             except:
-                print(self.visitDecConst(i))
+                decList.append(self.visitDecConst(i))
 
         return decList
 
@@ -79,3 +87,6 @@ class analizadorSemantico(simplified_javaVisitor):
 
         #  TODO checar se ja tem o id na tabela de simbolos
         return [ID, "const", self.defineType(value), value]
+
+    def show(self):
+        print(self.funcTable)

@@ -18,6 +18,7 @@ def main():
 
     semantic_analyzer = analizadorSemantico()
     semantic_analyzer.visit(tree)
+    semantic_analyzer.show()
 
 # class SyntaxErrorListener(ConsoleErrorListener):
 #     def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):

@@ -4,7 +4,6 @@ init: decFuncList? funcMain;
 
 decFuncList: decFunc+;
 decFunc: ID '(' parametersList ')' ':' funcType varField? cmmd* 'end';
-
 funcMain: 'main' ':' varField? cmmd* 'end';
 
 parametersList: ((dataType ID )(',' dataType ID)*)?;
@@ -35,7 +34,7 @@ BLOCK_COMMENT: '/*' .*? '*/' -> channel(HIDDEN) ;
 WS: [ \t\n\r] -> skip;
 
 ///////////////// ultimo
-cmmd: 'opa'; //if | assign | while | return | break | inst ';' ;
+cmmd: 'comando'; //if | assign | while | return | break | inst ';' ;
 //
 //// instância de função
 //inst: ID '(' value_list? ')' ;
