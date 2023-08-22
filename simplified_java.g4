@@ -1,59 +1,29 @@
 grammar simplified_java;
 
-init: func* func_main;
+init: decFuncList? funcMain;
 
-func: ID '(' parameters_list ')' ':' (type | 'void') dec_list? comd* 'end' ;
-func_main: 'main' ':' dec_list? comd* 'end' ;
+decFuncList: decFunc+;
+decFunc: ID '(' parametersList ')' ':' funcType varField? cmmd* 'end';
 
-parameters_list: ( ( type ID ) (',' type ID)* )? ;
-type: 'int' | 'float' | 'str' | 'bool' ;
+funcMain: 'main' ':' varField? cmmd* 'end';
 
-dec_list: 'var' ':' (dec_var | dec_const)+; // declaração de variáveis
-dec_var: ID (',' ID)* ':' type ';';
-dec_const: 'const' ID '=' value ';';
+parametersList: ((dataType ID )(',' dataType ID)*)?;
+
+funcType: 'int' | 'float' | 'str' | 'bool' | 'void';
+dataType: 'int' | 'float' | 'str' | 'bool' ;
+
+varField: 'var' ':' decVarConstList; // declaração de variáveis
+decVarConstList: (decVar | decConst)+;
+decVar: ID (',' ID)* ':' dataType ';';
+decConst: 'const' ID '=' value ';';
 value: INT | FLOAT | STR | BOOL; // valor que pode ser int float str ou bool ou retorno de função
-
-comd: if | assign | while | return | break | inst ';' ;
-
-// instância de função
-inst: ID '(' value_list? ')' ;
-value_list: ( (ID | value | inst | exp) ( ',' (ID | value | inst| exp) )* ) ;
-
-assign: ID '=' exp ';'; // Erro de atribuição feito na semantica
-return: 'return' (ID | value | exp) ';';
-
-if: 'if' '(' (logic_exp | BOOL) ')' ':' (comd)* else? 'end' ;
-else: 'else' ':' (comd)* ;
-
-while: 'while' '(' (logic_exp | BOOL) ')' ':' (comd)* 'end';
-break: 'break' ';';
 
 BOOL: 'true' | 'false';
 ID: [a-zA-Z][a-zA-Z_0-9]*;
-
-// Expressões lógicas e aritméticas
-exp: logic_exp | arith_exp ;
-
-logic_exp: logic_t | logic_exp 'or' logic_t ;
-logic_t: logic_f | logic_t 'and' logic_f ;
-logic_f: '!' logic_f | '(' logic_exp ')' | comparison ;
-
-comparison: arith_exp comparison_op arith_exp ;
-comparison_op: '==' | '!=' | '<'| '>'| '<='| '=>' ;
-
-arith_exp: arith_t | arith_exp '+' arith_t | arith_exp '-' arith_t ;
-arith_t: arith_f | arith_t '*' arith_f | arith_t '/' arith_f ;
-arith_f: number | '-' arith_f  | '(' arith_exp ')';
-
-// Tipos
-number: ID | INT | FLOAT | inst ; // inst e ID - verificar no semântico
-
 INT: [0-9]
    | [1-9][0-9]* ;
-
 FLOAT: [0-9] '.' [0-9]+
      | [1-9][0-9]* '.' [0-9]+ ;
-
 STR: '"' ( ESC | ~( '\\' | '"' ) )* '"' ;
 ESC: '\\' ( 't' | 'n' | '"' | '\\' ) ;
 
@@ -63,3 +33,36 @@ LINE_COMMENT: '//' ~[\r\n]* -> channel(HIDDEN) ;
 BLOCK_COMMENT: '/*' .*? '*/' -> channel(HIDDEN) ;
 
 WS: [ \t\n\r] -> skip;
+
+///////////////// ultimo
+cmmd: 'opa'; //if | assign | while | return | break | inst ';' ;
+//
+//// instância de função
+//inst: ID '(' value_list? ')' ;
+//value_list: ( (ID | value | inst | exp) ( ',' (ID | value | inst| exp) )* ) ;
+//
+//assign: ID '=' exp ';'; // Erro de atribuição feito na semantica
+//return: 'return' (ID | value | exp) ';';
+//
+//if: 'if' '(' (logic_exp | BOOL) ')' ':' (cmmd)* else? 'end' ;
+//else: 'else' ':' (cmmd)* ;
+//
+//while: 'while' '(' (logic_exp | BOOL) ')' ':' (cmmd)* 'end';
+//break: 'break' ';';
+
+// Expressões lógicas e aritméticas
+//exp: logic_exp | arith_exp ;
+//
+//logic_exp: logic_t | logic_exp 'or' logic_t ;
+//logic_t: logic_f | logic_t 'and' logic_f ;
+//logic_f: '!' logic_f | '(' logic_exp ')' | comparison ;
+//
+//comparison: arith_exp comparison_op arith_exp ;
+//comparison_op: '==' | '!=' | '<'| '>'| '<='| '=>' ;
+//
+//arith_exp: arith_t | arith_exp '+' arith_t | arith_exp '-' arith_t ;
+//arith_t: arith_f | arith_t '*' arith_f | arith_t '/' arith_f ;
+//arith_f: number | '-' arith_f  | '(' arith_exp ')';
+//
+//// Tipos
+//number: ID | INT | FLOAT ; // inst e ID - verificar no semântico
