@@ -41,8 +41,11 @@ class analizadorSemantico(simplified_javaVisitor):
         else:
             self.funcTable[funcID] = {"funcType": funcType, "funcParameters": funcParameters, "funcDecs": funcDecs}
 
+        for i in ctx.cmmd():
+            self.visitCmmd(i, funcID)
+
     def visitFuncMain(self, ctx:simplified_javaParser.FuncMainContext):
-        funcID = 'main'
+        funcID = 'main' # Se uma função main já foi definida, dará erro de sintaxe
         funcType = 'void'
         funcParameters = {}
 
@@ -161,7 +164,6 @@ class analizadorSemantico(simplified_javaVisitor):
 
         if ctx.value():
             return self.defineType(ctx.value().getText())
-
 
     def show(self):
         print(self.funcTable)

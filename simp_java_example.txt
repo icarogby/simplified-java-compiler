@@ -1,4 +1,4 @@
-fa (int fat) : int
+fa (bool fat) : int
  var:
     const PI = 3.14;
 
@@ -9,6 +9,8 @@ fai (int v1, bool v2) : void
         n1, n2 : float;
         top : int;
         const PI = 3.14;
+
+    fa(true);
 
 end
 

@@ -69,11 +69,6 @@ class simplified_javaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by simplified_javaParser#comment.
-    def visitComment(self, ctx:simplified_javaParser.CommentContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by simplified_javaParser#cmmd.
     def visitCmmd(self, ctx:simplified_javaParser.CmmdContext):
         return self.visitChildren(ctx)
@@ -94,8 +89,88 @@ class simplified_javaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by simplified_javaParser#assign.
+    def visitAssign(self, ctx:simplified_javaParser.AssignContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#return.
+    def visitReturn(self, ctx:simplified_javaParser.ReturnContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#if.
+    def visitIf(self, ctx:simplified_javaParser.IfContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#else.
+    def visitElse(self, ctx:simplified_javaParser.ElseContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#while.
+    def visitWhile(self, ctx:simplified_javaParser.WhileContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#break.
+    def visitBreak(self, ctx:simplified_javaParser.BreakContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by simplified_javaParser#exp.
     def visitExp(self, ctx:simplified_javaParser.ExpContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#logic_exp.
+    def visitLogic_exp(self, ctx:simplified_javaParser.Logic_expContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#logic_t.
+    def visitLogic_t(self, ctx:simplified_javaParser.Logic_tContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#logic_f.
+    def visitLogic_f(self, ctx:simplified_javaParser.Logic_fContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#comparison.
+    def visitComparison(self, ctx:simplified_javaParser.ComparisonContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#comparison_op.
+    def visitComparison_op(self, ctx:simplified_javaParser.Comparison_opContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#arith_exp.
+    def visitArith_exp(self, ctx:simplified_javaParser.Arith_expContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#arith_t.
+    def visitArith_t(self, ctx:simplified_javaParser.Arith_tContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#arith_f.
+    def visitArith_f(self, ctx:simplified_javaParser.Arith_fContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#number.
+    def visitNumber(self, ctx:simplified_javaParser.NumberContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#comment.
+    def visitComment(self, ctx:simplified_javaParser.CommentContext):
         return self.visitChildren(ctx)
 
 

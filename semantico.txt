@@ -4,10 +4,10 @@ Instancia de função dentro de expressão tem que retornar int ou float
 verificação de parametros
 verificação de atribuição
 
-verifica se msm nome de variavel no mesmo escopo
-erro se mesmo nome de função
-erro se mesmo id na definição de parametro
-verificar se uma instancia de função foi declarada
-verificar se um id passado nos parametross de uma instancia existe no escopo
-varifica se os tipos dos parametros passados estão corretos
-verifica se a quantidade de parametros passado na instância é a mesma da quantidade de parametros declarado.
+Verifica se uma variável tem o mesmo nome de outra no mesmo escopo
+Verifica se uma função tem o mesmo nome de outra
+Verifica se um parametro tem o mesmo nome de outro dentro da mesma função
+Verifica se uma instância de função foi declarada anteriormente
+Verifica se uma variável ou constante passado nos parametross de uma instancia existe no escopo
+Verifica se os tipos dos parametros passados estão de acordo com os tipos declarados
+Verifica se a quantidade de parametros passados na instância é a mesma da quantidade de parametros declarado
