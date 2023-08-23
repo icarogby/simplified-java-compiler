@@ -3,7 +3,7 @@ fa (int fat) : int
     const PI = 3.14;
 end
 
-fai (int v1, int v1) : void
+fai (int v1, int v2) : void
     var:
         n1, n2 : float;
         top : int;
@@ -16,5 +16,7 @@ main:
         numero : int;
         n1, n2 : int;
         const seila = 234;
+
+        fai(5, 6);
     
 end

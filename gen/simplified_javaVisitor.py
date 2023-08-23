@@ -79,5 +79,20 @@ class simplified_javaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by simplified_javaParser#inst.
+    def visitInst(self, ctx:simplified_javaParser.InstContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#instParamList.
+    def visitInstParamList(self, ctx:simplified_javaParser.InstParamListContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by simplified_javaParser#instParam.
+    def visitInstParam(self, ctx:simplified_javaParser.InstParamContext):
+        return self.visitChildren(ctx)
+
+
 
 del simplified_javaParser

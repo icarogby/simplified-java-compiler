@@ -33,13 +33,12 @@ BLOCK_COMMENT: '/*' .*? '*/' -> channel(HIDDEN) ;
 
 WS: [ \t\n\r] -> skip;
 
-///////////////// ultimo
-cmmd: 'comando'; //if | assign | while | return | break | inst ';' ;
-//
-//// instância de função
-//inst: ID '(' value_list? ')' ;
-//value_list: ( (ID | value | inst | exp) ( ',' (ID | value | inst| exp) )* ) ;
-//
+cmmd: inst ';' ; //if | assign | while | return | break | inst ';' ;
+
+inst: ID '(' instParamList? ')' ;
+instParamList: (instParam (',' instParam)* ) ;
+instParam: (ID | value ) ;  // TODO colocar expressoes  e inst aqui
+
 //assign: ID '=' exp ';'; // Erro de atribuição feito na semantica
 //return: 'return' (ID | value | exp) ';';
 //

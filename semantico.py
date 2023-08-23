@@ -19,6 +19,7 @@ class analizadorSemantico(simplified_javaVisitor):
                 return 'float'
             except ValueError:
                 return 'str'
+            
     def funcIdInUse(self, funcId):
         if funcId in self.funcTable:
             return True
@@ -51,6 +52,10 @@ class analizadorSemantico(simplified_javaVisitor):
             funcDecs = []
 
         self.funcTable[funcID] = {"funcType": funcType, "funcParameters": funcParameters, "funcDecs": funcDecs}
+
+        for i in ctx.cmmd():
+            self.visitCmmd(i)
+
 
     def visitParametersList(self, ctx):
         paramList = {}
@@ -97,12 +102,22 @@ class analizadorSemantico(simplified_javaVisitor):
 
         return vars
 
-    # Visit a parse tree produced by simplified_javaParser#decConst.
     def visitDecConst(self, ctx: simplified_javaParser.DecConstContext):
         decConst = ctx.getText()[5:-1]
         ID, value = decConst.split("=", 1)
 
         return [ID, "const", self.defineType(value), value]
+
+    def visitCmmd(self, ctx:simplified_javaParser.CmmdContext):
+        if ctx.inst():
+            self.visitInst(ctx.inst())
+
+    def visitInst(self, ctx:simplified_javaParser.InstContext):
+        instId = str(ctx.ID())
+        funcIds = list(self.funcTable.keys())
+
+        if instId not in funcIds:
+            raise Exception(f"Function ID {instId} not defined.")
 
     def show(self):
         print(self.funcTable)

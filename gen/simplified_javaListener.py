@@ -134,5 +134,32 @@ class simplified_javaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by simplified_javaParser#inst.
+    def enterInst(self, ctx:simplified_javaParser.InstContext):
+        pass
+
+    # Exit a parse tree produced by simplified_javaParser#inst.
+    def exitInst(self, ctx:simplified_javaParser.InstContext):
+        pass
+
+
+    # Enter a parse tree produced by simplified_javaParser#instParamList.
+    def enterInstParamList(self, ctx:simplified_javaParser.InstParamListContext):
+        pass
+
+    # Exit a parse tree produced by simplified_javaParser#instParamList.
+    def exitInstParamList(self, ctx:simplified_javaParser.InstParamListContext):
+        pass
+
+
+    # Enter a parse tree produced by simplified_javaParser#instParam.
+    def enterInstParam(self, ctx:simplified_javaParser.InstParamContext):
+        pass
+
+    # Exit a parse tree produced by simplified_javaParser#instParam.
+    def exitInstParam(self, ctx:simplified_javaParser.InstParamContext):
+        pass
+
+
 
 del simplified_javaParser

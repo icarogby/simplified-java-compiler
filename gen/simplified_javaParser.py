@@ -10,44 +10,54 @@ else:
 
 def serializedATN():
     return [
-        4,1,25,122,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,24,149,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
-        1,0,3,0,30,8,0,1,0,1,0,1,1,4,1,35,8,1,11,1,12,1,36,1,2,1,2,1,2,1,
-        2,1,2,1,2,1,2,3,2,46,8,2,1,2,5,2,49,8,2,10,2,12,2,52,9,2,1,2,1,2,
-        1,3,1,3,1,3,3,3,59,8,3,1,3,5,3,62,8,3,10,3,12,3,65,9,3,1,3,1,3,1,
-        4,1,4,1,4,1,4,1,4,1,4,1,4,5,4,76,8,4,10,4,12,4,79,9,4,3,4,81,8,4,
-        1,5,1,5,1,6,1,6,1,7,1,7,1,7,4,7,90,8,7,11,7,12,7,91,1,8,1,8,3,8,
-        96,8,8,1,9,1,9,1,9,5,9,101,8,9,10,9,12,9,104,9,9,1,9,1,9,1,9,1,9,
-        1,10,1,10,1,10,1,10,1,10,1,10,1,11,1,11,1,12,1,12,1,13,1,13,1,13,
-        0,0,14,0,2,4,6,8,10,12,14,16,18,20,22,24,26,0,4,1,0,7,11,1,0,7,10,
-        2,0,17,17,19,21,1,0,23,24,118,0,29,1,0,0,0,2,34,1,0,0,0,4,38,1,0,
-        0,0,6,55,1,0,0,0,8,80,1,0,0,0,10,82,1,0,0,0,12,84,1,0,0,0,14,86,
-        1,0,0,0,16,95,1,0,0,0,18,97,1,0,0,0,20,109,1,0,0,0,22,115,1,0,0,
-        0,24,117,1,0,0,0,26,119,1,0,0,0,28,30,3,2,1,0,29,28,1,0,0,0,29,30,
-        1,0,0,0,30,31,1,0,0,0,31,32,3,6,3,0,32,1,1,0,0,0,33,35,3,4,2,0,34,
-        33,1,0,0,0,35,36,1,0,0,0,36,34,1,0,0,0,36,37,1,0,0,0,37,3,1,0,0,
-        0,38,39,5,18,0,0,39,40,5,1,0,0,40,41,3,8,4,0,41,42,5,2,0,0,42,43,
-        5,3,0,0,43,45,3,10,5,0,44,46,3,14,7,0,45,44,1,0,0,0,45,46,1,0,0,
-        0,46,50,1,0,0,0,47,49,3,26,13,0,48,47,1,0,0,0,49,52,1,0,0,0,50,48,
-        1,0,0,0,50,51,1,0,0,0,51,53,1,0,0,0,52,50,1,0,0,0,53,54,5,4,0,0,
-        54,5,1,0,0,0,55,56,5,5,0,0,56,58,5,3,0,0,57,59,3,14,7,0,58,57,1,
-        0,0,0,58,59,1,0,0,0,59,63,1,0,0,0,60,62,3,26,13,0,61,60,1,0,0,0,
-        62,65,1,0,0,0,63,61,1,0,0,0,63,64,1,0,0,0,64,66,1,0,0,0,65,63,1,
-        0,0,0,66,67,5,4,0,0,67,7,1,0,0,0,68,69,3,12,6,0,69,70,5,18,0,0,70,
-        77,1,0,0,0,71,72,5,6,0,0,72,73,3,12,6,0,73,74,5,18,0,0,74,76,1,0,
-        0,0,75,71,1,0,0,0,76,79,1,0,0,0,77,75,1,0,0,0,77,78,1,0,0,0,78,81,
-        1,0,0,0,79,77,1,0,0,0,80,68,1,0,0,0,80,81,1,0,0,0,81,9,1,0,0,0,82,
-        83,7,0,0,0,83,11,1,0,0,0,84,85,7,1,0,0,85,13,1,0,0,0,86,87,5,12,
-        0,0,87,89,5,3,0,0,88,90,3,16,8,0,89,88,1,0,0,0,90,91,1,0,0,0,91,
-        89,1,0,0,0,91,92,1,0,0,0,92,15,1,0,0,0,93,96,3,18,9,0,94,96,3,20,
-        10,0,95,93,1,0,0,0,95,94,1,0,0,0,96,17,1,0,0,0,97,102,5,18,0,0,98,
-        99,5,6,0,0,99,101,5,18,0,0,100,98,1,0,0,0,101,104,1,0,0,0,102,100,
-        1,0,0,0,102,103,1,0,0,0,103,105,1,0,0,0,104,102,1,0,0,0,105,106,
-        5,3,0,0,106,107,3,12,6,0,107,108,5,13,0,0,108,19,1,0,0,0,109,110,
-        5,14,0,0,110,111,5,18,0,0,111,112,5,15,0,0,112,113,3,22,11,0,113,
-        114,5,13,0,0,114,21,1,0,0,0,115,116,7,2,0,0,116,23,1,0,0,0,117,118,
-        7,3,0,0,118,25,1,0,0,0,119,120,5,16,0,0,120,27,1,0,0,0,11,29,36,
-        45,50,58,63,77,80,91,95,102
+        2,14,7,14,2,15,7,15,2,16,7,16,1,0,3,0,36,8,0,1,0,1,0,1,1,4,1,41,
+        8,1,11,1,12,1,42,1,2,1,2,1,2,1,2,1,2,1,2,1,2,3,2,52,8,2,1,2,5,2,
+        55,8,2,10,2,12,2,58,9,2,1,2,1,2,1,3,1,3,1,3,3,3,65,8,3,1,3,5,3,68,
+        8,3,10,3,12,3,71,9,3,1,3,1,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,5,4,82,
+        8,4,10,4,12,4,85,9,4,3,4,87,8,4,1,5,1,5,1,6,1,6,1,7,1,7,1,7,4,7,
+        96,8,7,11,7,12,7,97,1,8,1,8,3,8,102,8,8,1,9,1,9,1,9,5,9,107,8,9,
+        10,9,12,9,110,9,9,1,9,1,9,1,9,1,9,1,10,1,10,1,10,1,10,1,10,1,10,
+        1,11,1,11,1,12,1,12,1,13,1,13,1,13,1,14,1,14,1,14,3,14,132,8,14,
+        1,14,1,14,1,15,1,15,1,15,5,15,139,8,15,10,15,12,15,142,9,15,1,16,
+        1,16,1,16,3,16,147,8,16,1,16,0,0,17,0,2,4,6,8,10,12,14,16,18,20,
+        22,24,26,28,30,32,0,4,1,0,7,11,1,0,7,10,2,0,16,16,18,20,1,0,22,23,
+        146,0,35,1,0,0,0,2,40,1,0,0,0,4,44,1,0,0,0,6,61,1,0,0,0,8,86,1,0,
+        0,0,10,88,1,0,0,0,12,90,1,0,0,0,14,92,1,0,0,0,16,101,1,0,0,0,18,
+        103,1,0,0,0,20,115,1,0,0,0,22,121,1,0,0,0,24,123,1,0,0,0,26,125,
+        1,0,0,0,28,128,1,0,0,0,30,135,1,0,0,0,32,146,1,0,0,0,34,36,3,2,1,
+        0,35,34,1,0,0,0,35,36,1,0,0,0,36,37,1,0,0,0,37,38,3,6,3,0,38,1,1,
+        0,0,0,39,41,3,4,2,0,40,39,1,0,0,0,41,42,1,0,0,0,42,40,1,0,0,0,42,
+        43,1,0,0,0,43,3,1,0,0,0,44,45,5,17,0,0,45,46,5,1,0,0,46,47,3,8,4,
+        0,47,48,5,2,0,0,48,49,5,3,0,0,49,51,3,10,5,0,50,52,3,14,7,0,51,50,
+        1,0,0,0,51,52,1,0,0,0,52,56,1,0,0,0,53,55,3,26,13,0,54,53,1,0,0,
+        0,55,58,1,0,0,0,56,54,1,0,0,0,56,57,1,0,0,0,57,59,1,0,0,0,58,56,
+        1,0,0,0,59,60,5,4,0,0,60,5,1,0,0,0,61,62,5,5,0,0,62,64,5,3,0,0,63,
+        65,3,14,7,0,64,63,1,0,0,0,64,65,1,0,0,0,65,69,1,0,0,0,66,68,3,26,
+        13,0,67,66,1,0,0,0,68,71,1,0,0,0,69,67,1,0,0,0,69,70,1,0,0,0,70,
+        72,1,0,0,0,71,69,1,0,0,0,72,73,5,4,0,0,73,7,1,0,0,0,74,75,3,12,6,
+        0,75,76,5,17,0,0,76,83,1,0,0,0,77,78,5,6,0,0,78,79,3,12,6,0,79,80,
+        5,17,0,0,80,82,1,0,0,0,81,77,1,0,0,0,82,85,1,0,0,0,83,81,1,0,0,0,
+        83,84,1,0,0,0,84,87,1,0,0,0,85,83,1,0,0,0,86,74,1,0,0,0,86,87,1,
+        0,0,0,87,9,1,0,0,0,88,89,7,0,0,0,89,11,1,0,0,0,90,91,7,1,0,0,91,
+        13,1,0,0,0,92,93,5,12,0,0,93,95,5,3,0,0,94,96,3,16,8,0,95,94,1,0,
+        0,0,96,97,1,0,0,0,97,95,1,0,0,0,97,98,1,0,0,0,98,15,1,0,0,0,99,102,
+        3,18,9,0,100,102,3,20,10,0,101,99,1,0,0,0,101,100,1,0,0,0,102,17,
+        1,0,0,0,103,108,5,17,0,0,104,105,5,6,0,0,105,107,5,17,0,0,106,104,
+        1,0,0,0,107,110,1,0,0,0,108,106,1,0,0,0,108,109,1,0,0,0,109,111,
+        1,0,0,0,110,108,1,0,0,0,111,112,5,3,0,0,112,113,3,12,6,0,113,114,
+        5,13,0,0,114,19,1,0,0,0,115,116,5,14,0,0,116,117,5,17,0,0,117,118,
+        5,15,0,0,118,119,3,22,11,0,119,120,5,13,0,0,120,21,1,0,0,0,121,122,
+        7,2,0,0,122,23,1,0,0,0,123,124,7,3,0,0,124,25,1,0,0,0,125,126,3,
+        28,14,0,126,127,5,13,0,0,127,27,1,0,0,0,128,129,5,17,0,0,129,131,
+        5,1,0,0,130,132,3,30,15,0,131,130,1,0,0,0,131,132,1,0,0,0,132,133,
+        1,0,0,0,133,134,5,2,0,0,134,29,1,0,0,0,135,140,3,32,16,0,136,137,
+        5,6,0,0,137,139,3,32,16,0,138,136,1,0,0,0,139,142,1,0,0,0,140,138,
+        1,0,0,0,140,141,1,0,0,0,141,31,1,0,0,0,142,140,1,0,0,0,143,147,5,
+        17,0,0,144,147,3,22,11,0,145,147,3,28,14,0,146,143,1,0,0,0,146,144,
+        1,0,0,0,146,145,1,0,0,0,147,33,1,0,0,0,14,35,42,51,56,64,69,83,86,
+        97,101,108,131,140,146
     ]
 
 class simplified_javaParser ( Parser ):
@@ -62,14 +72,14 @@ class simplified_javaParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'('", "')'", "':'", "'end'", "'main'", 
                      "','", "'int'", "'float'", "'str'", "'bool'", "'void'", 
-                     "'var'", "';'", "'const'", "'='", "'opa'" ]
+                     "'var'", "';'", "'const'", "'='" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "BOOL", "ID", "INT", "FLOAT", "STR", 
-                      "ESC", "LINE_COMMENT", "BLOCK_COMMENT", "WS" ]
+                      "BOOL", "ID", "INT", "FLOAT", "STR", "ESC", "LINE_COMMENT", 
+                      "BLOCK_COMMENT", "WS" ]
 
     RULE_init = 0
     RULE_decFuncList = 1
@@ -85,10 +95,14 @@ class simplified_javaParser ( Parser ):
     RULE_value = 11
     RULE_comment = 12
     RULE_cmmd = 13
+    RULE_inst = 14
+    RULE_instParamList = 15
+    RULE_instParam = 16
 
     ruleNames =  [ "init", "decFuncList", "decFunc", "funcMain", "parametersList", 
                    "funcType", "dataType", "varField", "decVarConst", "decVar", 
-                   "decConst", "value", "comment", "cmmd" ]
+                   "decConst", "value", "comment", "cmmd", "inst", "instParamList", 
+                   "instParam" ]
 
     EOF = Token.EOF
     T__0=1
@@ -106,16 +120,15 @@ class simplified_javaParser ( Parser ):
     T__12=13
     T__13=14
     T__14=15
-    T__15=16
-    BOOL=17
-    ID=18
-    INT=19
-    FLOAT=20
-    STR=21
-    ESC=22
-    LINE_COMMENT=23
-    BLOCK_COMMENT=24
-    WS=25
+    BOOL=16
+    ID=17
+    INT=18
+    FLOAT=19
+    STR=20
+    ESC=21
+    LINE_COMMENT=22
+    BLOCK_COMMENT=23
+    WS=24
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -168,15 +181,15 @@ class simplified_javaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 29
+            self.state = 35
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==18:
-                self.state = 28
+            if _la==17:
+                self.state = 34
                 self.decFuncList()
 
 
-            self.state = 31
+            self.state = 37
             self.funcMain()
         except RecognitionException as re:
             localctx.exception = re
@@ -228,16 +241,16 @@ class simplified_javaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 34 
+            self.state = 40 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 33
+                self.state = 39
                 self.decFunc()
-                self.state = 36 
+                self.state = 42 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==18):
+                if not (_la==17):
                     break
 
         except RecognitionException as re:
@@ -305,37 +318,37 @@ class simplified_javaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 38
+            self.state = 44
             self.match(simplified_javaParser.ID)
-            self.state = 39
-            self.match(simplified_javaParser.T__0)
-            self.state = 40
-            self.parametersList()
-            self.state = 41
-            self.match(simplified_javaParser.T__1)
-            self.state = 42
-            self.match(simplified_javaParser.T__2)
-            self.state = 43
-            self.funcType()
             self.state = 45
+            self.match(simplified_javaParser.T__0)
+            self.state = 46
+            self.parametersList()
+            self.state = 47
+            self.match(simplified_javaParser.T__1)
+            self.state = 48
+            self.match(simplified_javaParser.T__2)
+            self.state = 49
+            self.funcType()
+            self.state = 51
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==12:
-                self.state = 44
+                self.state = 50
                 self.varField()
 
 
-            self.state = 50
+            self.state = 56
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==16:
-                self.state = 47
+            while _la==17:
+                self.state = 53
                 self.cmmd()
-                self.state = 52
+                self.state = 58
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 53
+            self.state = 59
             self.match(simplified_javaParser.T__3)
         except RecognitionException as re:
             localctx.exception = re
@@ -391,29 +404,29 @@ class simplified_javaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 55
+            self.state = 61
             self.match(simplified_javaParser.T__4)
-            self.state = 56
+            self.state = 62
             self.match(simplified_javaParser.T__2)
-            self.state = 58
+            self.state = 64
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==12:
-                self.state = 57
+                self.state = 63
                 self.varField()
 
 
-            self.state = 63
+            self.state = 69
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==16:
-                self.state = 60
+            while _la==17:
+                self.state = 66
                 self.cmmd()
-                self.state = 65
+                self.state = 71
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 66
+            self.state = 72
             self.match(simplified_javaParser.T__3)
         except RecognitionException as re:
             localctx.exception = re
@@ -471,25 +484,25 @@ class simplified_javaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 80
+            self.state = 86
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & 1920) != 0):
-                self.state = 68
+                self.state = 74
                 self.dataType()
-                self.state = 69
+                self.state = 75
                 self.match(simplified_javaParser.ID)
-                self.state = 77
+                self.state = 83
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==6:
-                    self.state = 71
+                    self.state = 77
                     self.match(simplified_javaParser.T__5)
-                    self.state = 72
+                    self.state = 78
                     self.dataType()
-                    self.state = 73
-                    self.match(simplified_javaParser.ID)
                     self.state = 79
+                    self.match(simplified_javaParser.ID)
+                    self.state = 85
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
@@ -539,7 +552,7 @@ class simplified_javaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 82
+            self.state = 88
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 3968) != 0)):
                 self._errHandler.recoverInline(self)
@@ -590,7 +603,7 @@ class simplified_javaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 84
+            self.state = 90
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 1920) != 0)):
                 self._errHandler.recoverInline(self)
@@ -644,24 +657,25 @@ class simplified_javaParser ( Parser ):
 
         localctx = simplified_javaParser.VarFieldContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_varField)
-        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 86
+            self.state = 92
             self.match(simplified_javaParser.T__11)
-            self.state = 87
+            self.state = 93
             self.match(simplified_javaParser.T__2)
-            self.state = 89 
+            self.state = 95 
             self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while True:
-                self.state = 88
-                self.decVarConst()
-                self.state = 91 
+            _alt = 1
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
+                    self.state = 94
+                    self.decVarConst()
+
+                else:
+                    raise NoViableAltException(self)
+                self.state = 97 
                 self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                if not (_la==14 or _la==18):
-                    break
+                _alt = self._interp.adaptivePredict(self._input,8,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -712,17 +726,17 @@ class simplified_javaParser ( Parser ):
         localctx = simplified_javaParser.DecVarConstContext(self, self._ctx, self.state)
         self.enterRule(localctx, 16, self.RULE_decVarConst)
         try:
-            self.state = 95
+            self.state = 101
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [18]:
+            if token in [17]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 93
+                self.state = 99
                 self.decVar()
                 pass
             elif token in [14]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 94
+                self.state = 100
                 self.decConst()
                 pass
             else:
@@ -781,25 +795,25 @@ class simplified_javaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 97
+            self.state = 103
             self.match(simplified_javaParser.ID)
-            self.state = 102
+            self.state = 108
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==6:
-                self.state = 98
-                self.match(simplified_javaParser.T__5)
-                self.state = 99
-                self.match(simplified_javaParser.ID)
                 self.state = 104
+                self.match(simplified_javaParser.T__5)
+                self.state = 105
+                self.match(simplified_javaParser.ID)
+                self.state = 110
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 105
+            self.state = 111
             self.match(simplified_javaParser.T__2)
-            self.state = 106
+            self.state = 112
             self.dataType()
-            self.state = 107
+            self.state = 113
             self.match(simplified_javaParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -850,15 +864,15 @@ class simplified_javaParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_decConst)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 109
+            self.state = 115
             self.match(simplified_javaParser.T__13)
-            self.state = 110
+            self.state = 116
             self.match(simplified_javaParser.ID)
-            self.state = 111
+            self.state = 117
             self.match(simplified_javaParser.T__14)
-            self.state = 112
+            self.state = 118
             self.value()
-            self.state = 113
+            self.state = 119
             self.match(simplified_javaParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
@@ -915,9 +929,9 @@ class simplified_javaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 115
+            self.state = 121
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 3801088) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 1900544) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -971,9 +985,9 @@ class simplified_javaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 117
+            self.state = 123
             _la = self._input.LA(1)
-            if not(_la==23 or _la==24):
+            if not(_la==22 or _la==23):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -993,6 +1007,9 @@ class simplified_javaParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def inst(self):
+            return self.getTypedRuleContext(simplified_javaParser.InstContext,0)
 
 
         def getRuleIndex(self):
@@ -1021,8 +1038,210 @@ class simplified_javaParser ( Parser ):
         self.enterRule(localctx, 26, self.RULE_cmmd)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 119
-            self.match(simplified_javaParser.T__15)
+            self.state = 125
+            self.inst()
+            self.state = 126
+            self.match(simplified_javaParser.T__12)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class InstContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def ID(self):
+            return self.getToken(simplified_javaParser.ID, 0)
+
+        def instParamList(self):
+            return self.getTypedRuleContext(simplified_javaParser.InstParamListContext,0)
+
+
+        def getRuleIndex(self):
+            return simplified_javaParser.RULE_inst
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterInst" ):
+                listener.enterInst(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitInst" ):
+                listener.exitInst(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInst" ):
+                return visitor.visitInst(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def inst(self):
+
+        localctx = simplified_javaParser.InstContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 28, self.RULE_inst)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 128
+            self.match(simplified_javaParser.ID)
+            self.state = 129
+            self.match(simplified_javaParser.T__0)
+            self.state = 131
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 2031616) != 0):
+                self.state = 130
+                self.instParamList()
+
+
+            self.state = 133
+            self.match(simplified_javaParser.T__1)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class InstParamListContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def instParam(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(simplified_javaParser.InstParamContext)
+            else:
+                return self.getTypedRuleContext(simplified_javaParser.InstParamContext,i)
+
+
+        def getRuleIndex(self):
+            return simplified_javaParser.RULE_instParamList
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterInstParamList" ):
+                listener.enterInstParamList(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitInstParamList" ):
+                listener.exitInstParamList(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInstParamList" ):
+                return visitor.visitInstParamList(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def instParamList(self):
+
+        localctx = simplified_javaParser.InstParamListContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 30, self.RULE_instParamList)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 135
+            self.instParam()
+            self.state = 140
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while _la==6:
+                self.state = 136
+                self.match(simplified_javaParser.T__5)
+                self.state = 137
+                self.instParam()
+                self.state = 142
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class InstParamContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def ID(self):
+            return self.getToken(simplified_javaParser.ID, 0)
+
+        def value(self):
+            return self.getTypedRuleContext(simplified_javaParser.ValueContext,0)
+
+
+        def inst(self):
+            return self.getTypedRuleContext(simplified_javaParser.InstContext,0)
+
+
+        def getRuleIndex(self):
+            return simplified_javaParser.RULE_instParam
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterInstParam" ):
+                listener.enterInstParam(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitInstParam" ):
+                listener.exitInstParam(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInstParam" ):
+                return visitor.visitInstParam(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def instParam(self):
+
+        localctx = simplified_javaParser.InstParamContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 32, self.RULE_instParam)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 146
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
+            if la_ == 1:
+                self.state = 143
+                self.match(simplified_javaParser.ID)
+                pass
+
+            elif la_ == 2:
+                self.state = 144
+                self.value()
+                pass
+
+            elif la_ == 3:
+                self.state = 145
+                self.inst()
+                pass
+
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
