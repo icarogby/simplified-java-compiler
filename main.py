@@ -10,7 +10,7 @@ from semantico import analizadorSemantico
 from antlr4.error.ErrorListener import ConsoleErrorListener
 
 def main():
-    input_stream = FileStream("simp_java_example.txt")  # Nome do arquivo de entrada
+    input_stream = FileStream("exemplo.txt")  # Nome do arquivo de entrada
     lexer = simplified_javaLexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = simplified_javaParser(stream)
