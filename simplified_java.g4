@@ -37,7 +37,8 @@ cmmd: inst ';' ; //if | assign | while | return | break | inst ';' ;
 
 inst: ID '(' instParamList? ')' ;
 instParamList: (instParam (',' instParam)* ) ;
-instParam: (ID | value ) ;  // TODO colocar expressoes  e inst aqui
+instParam: (ID | value | inst | exp ) ;
+exp: '0' ; // TODO terminar
 
 //assign: ID '=' exp ';'; // Erro de atribuição feito na semantica
 //return: 'return' (ID | value | exp) ';';

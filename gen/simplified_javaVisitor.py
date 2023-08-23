@@ -94,5 +94,10 @@ class simplified_javaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by simplified_javaParser#exp.
+    def visitExp(self, ctx:simplified_javaParser.ExpContext):
+        return self.visitChildren(ctx)
+
+
 
 del simplified_javaParser

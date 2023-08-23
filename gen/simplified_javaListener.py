@@ -161,5 +161,14 @@ class simplified_javaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by simplified_javaParser#exp.
+    def enterExp(self, ctx:simplified_javaParser.ExpContext):
+        pass
+
+    # Exit a parse tree produced by simplified_javaParser#exp.
+    def exitExp(self, ctx:simplified_javaParser.ExpContext):
+        pass
+
+
 
 del simplified_javaParser

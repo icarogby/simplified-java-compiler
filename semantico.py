@@ -54,7 +54,7 @@ class analizadorSemantico(simplified_javaVisitor):
         self.funcTable[funcID] = {"funcType": funcType, "funcParameters": funcParameters, "funcDecs": funcDecs}
 
         for i in ctx.cmmd():
-            self.visitCmmd(i)
+            self.visitCmmd(i, funcID)
 
 
     def visitParametersList(self, ctx):
@@ -108,16 +108,54 @@ class analizadorSemantico(simplified_javaVisitor):
 
         return [ID, "const", self.defineType(value), value]
 
-    def visitCmmd(self, ctx:simplified_javaParser.CmmdContext):
+    def visitCmmd(self, ctx:simplified_javaParser.CmmdContext, scopeId):
         if ctx.inst():
-            self.visitInst(ctx.inst())
+            self.visitInst(ctx.inst(), scopeId)
 
-    def visitInst(self, ctx:simplified_javaParser.InstContext):
+    def visitInst(self, ctx:simplified_javaParser.InstContext, scopeId):
         instId = str(ctx.ID())
         funcIds = list(self.funcTable.keys())
 
+        # verifica se a função chamada existe
         if instId not in funcIds:
             raise Exception(f"Function ID {instId} not defined.")
+
+        # pega a lista de parametros da função chamada
+        funcParams = self.funcTable[instId]["funcParameters"]
+
+        # verifica se a quantidade de parametros passados é igual a quantidade de parametros da função chamada
+        if len(ctx.instParamList().instParam()) != len(funcParams):
+            raise Exception(f"Number of parameters passed to function {instId} is different from the number of parameters defined.")
+
+        # verifica se ps parametros são do mesmo tipo definido
+        for instType, decType in zip(self.visitInstParamList(ctx.instParamList(), scopeId), funcParams.values()):
+            if instType != decType:
+                raise Exception(f"Parameter type passed to function {instId} is different from the parameter type defined.")
+
+    def visitInstParamList(self, ctx:simplified_javaParser.InstParamListContext, funcID):
+        paramList = []
+
+        for i in ctx.instParam():
+            paramList.append(self.visitInstParam(i, funcID))
+
+        # retorna uma lista com o tipo de cada parametro passado
+        return paramList
+
+    def visitInstParam(self, ctx:simplified_javaParser.InstParamContext, funcID):
+        if ctx.ID():
+            # pega a lista de variaveis e constantes daquele escopo
+            varConsType = self.funcTable[funcID]["funcDecs"]
+
+            # verifica se a variavel ou constante existe
+            if ctx.ID().getText() not in [x[0] for x in varConsType]:
+                raise Exception(f"Variable or Constant ID {ctx.ID().getText()} not defined in this scope.")
+
+            # retorna o tipo da variavel ou constante
+            return varConsType[[x[0] for x in varConsType].index(ctx.ID().getText())][2]
+ 
+        if ctx.value():
+            return self.defineType(ctx.value().getText())
+
 
     def show(self):
         print(self.funcTable)

@@ -8,3 +8,6 @@ verifica se msm nome de variavel no mesmo escopo
 erro se mesmo nome de função
 erro se mesmo id na definição de parametro
 verificar se uma instancia de função foi declarada
+verificar se um id passado nos parametross de uma instancia existe no escopo
+varifica se os tipos dos parametros passados estão corretos
+verifica se a quantidade de parametros passado na instância é a mesma da quantidade de parametros declarado.
