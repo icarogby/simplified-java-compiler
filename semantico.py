@@ -123,14 +123,20 @@ class analizadorSemantico(simplified_javaVisitor):
         # pega a lista de parametros da função chamada
         funcParams = self.funcTable[instId]["funcParameters"]
 
-        # verifica se a quantidade de parametros passados é igual a quantidade de parametros da função chamada
-        if len(ctx.instParamList().instParam()) != len(funcParams):
-            raise Exception(f"Number of parameters passed to function {instId} is different from the number of parameters defined.")
+        if ctx.instParamList():
+            # verifica se a quantidade de parametros passados é igual a quantidade de parametros da função chamada
+            if len(ctx.instParamList().instParam()) != len(funcParams):
+                raise Exception(f"Number of parameters passed to function {instId} is different from the number of parameters defined.")
 
-        # verifica se ps parametros são do mesmo tipo definido
-        for instType, decType in zip(self.visitInstParamList(ctx.instParamList(), scopeId), funcParams.values()):
-            if instType != decType:
-                raise Exception(f"Parameter type passed to function {instId} is different from the parameter type defined.")
+            # verifica se ps parametros são do mesmo tipo definido
+            for instType, decType in zip(self.visitInstParamList(ctx.instParamList(), scopeId), funcParams.values()):
+                if instType != decType:
+                    raise Exception(f"Parameter type passed to function {instId} is different from the parameter type defined.")
+
+        else: # se não tiver parametros passados
+            # verifica se a quantidade de parametros da função chamada é igual a 0
+            if len(funcParams) != 0:
+                raise Exception(f"Number of parameters passed to function {instId} is different from the number of parameters defined.")
 
     def visitInstParamList(self, ctx:simplified_javaParser.InstParamListContext, funcID):
         paramList = []
@@ -148,11 +154,11 @@ class analizadorSemantico(simplified_javaVisitor):
 
             # verifica se a variavel ou constante existe
             if ctx.ID().getText() not in [x[0] for x in varConsType]:
-                raise Exception(f"Variable or Constant ID {ctx.ID().getText()} not defined in this scope.")
+                raise Exception(f"Variable or Constant {ctx.ID().getText()} not defined in this scope.")
 
             # retorna o tipo da variavel ou constante
             return varConsType[[x[0] for x in varConsType].index(ctx.ID().getText())][2]
- 
+
         if ctx.value():
             return self.defineType(ctx.value().getText())
 

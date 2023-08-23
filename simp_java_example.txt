@@ -4,7 +4,7 @@ fa (int fat) : int
 
 end
 
-fai (int v1, int v2) : void
+fai (int v1, bool v2) : void
     var:
         n1, n2 : float;
         top : int;
@@ -18,6 +18,6 @@ main:
         n1, n2 : int;
         const seila = 234;
 
-    fai(4, numero);
+    fai(5, true);
     
 end
