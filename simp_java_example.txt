@@ -3,12 +3,11 @@ fa (int fat) : int
     const PI = 3.14;
 end
 
-fai (int v1, int v2) : void
+fai (int v1, int v1) : void
     var:
         n1, n2 : float;
         top : int;
         const PI = 3.14;
-        PI : float;
 
 end
 

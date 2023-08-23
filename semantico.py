@@ -25,22 +25,6 @@ class analizadorSemantico(simplified_javaVisitor):
         else:
             return False
 
-    def varConstIdInUse(self, funcId, varConstId):
-        funcInfo = self.funcTable[funcId]
-        print(funcInfo['funcDecs'])
-
-        #for dec in funcDecs:
-            # if dec[0] == varConstId:
-            #     return True
-
-        return False
-
-        # if id in self.funcTable[funcId]['funcDecs']:
-        #     return True
-        # else:
-        #     return False
-
-        # Visit a parse tree produced by simplified_javaParser#decFunc.
     def visitDecFunc(self, ctx: simplified_javaParser.DecFuncContext):
         funcID = ctx.ID().getText()
         funcType = ctx.funcType().getText()
@@ -72,6 +56,9 @@ class analizadorSemantico(simplified_javaVisitor):
         paramList = {}
 
         for dataType, ID in zip(ctx.dataType(), ctx.ID()):
+            if ID.getText() in paramList:
+                raise Exception(f"Parameter ID {ID.getText()} already in use.")
+
             paramList[ID.getText()] = dataType.getText()
 
         return paramList
@@ -83,6 +70,7 @@ class analizadorSemantico(simplified_javaVisitor):
             if i.decVar():
                 for var in self.visitDecVar(i):
                     IDs = [x[0] for x in decList]
+
                     if var[0] in IDs:
                         raise Exception(f"Variable ID {var[0]} already in use in this scope.")
 
@@ -105,7 +93,6 @@ class analizadorSemantico(simplified_javaVisitor):
         varType = varType[:-1]
 
         for variable in variables:
-            #  TODO checar se ja tem o id na tabela de simbolos
             vars.append([variable, "var", varType, None])
 
         return vars
@@ -115,7 +102,6 @@ class analizadorSemantico(simplified_javaVisitor):
         decConst = ctx.getText()[5:-1]
         ID, value = decConst.split("=", 1)
 
-        #  TODO checar se ja tem o id na tabela de simbolos
         return [ID, "const", self.defineType(value), value]
 
     def show(self):

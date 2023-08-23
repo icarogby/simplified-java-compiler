@@ -3,3 +3,7 @@ break dentro de while
 Instancia de função dentro de expressão tem que retornar int ou float
 verificação de parametros
 verificação de atribuição
+
+erro se msm nome de variavel no mesmo escopo
+erro se mesmo nome de função
+erro se mesmo id na definição de parametro
