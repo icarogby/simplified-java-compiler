@@ -1,25 +1,41 @@
-fa (bool fat) : int
+fatorial (int fat) : int
+  x = fat * fatorial(fat - 1);
+  while(true):
+    print("zap");
+  end
+  if (false):
+    print (fat);
+    return fat * fatorial(fat - 1);
+  else:
+    return 1;
+end
+end
+mostrarMedia (int v1, int v2) : void
  var:
-    const PI = 3.14;
+ x : float;
+ y : int;
+ x = (v1+v2)/2;
+ x = print(0);
+ t = 6 <= 7 ;
 
+print (""); // top
+end
+media (float n1, float n2) : float
+ var:
+ m : float;
+ const PI = true;
+ m = (n1 + n2)/2;
+ return m;
 end
 
-fai (int v1, bool v2) : void
-    var:
-        n1, n2 : float;
-        top : int;
-        const PI = 3.14;
-
-    fa(true);
-
-end
-
-main:
-    var:
-        numero : float;
-        n1, n2 : int;
-        const seila = 234;
-
-    fai(5, true);
-    
+main :
+ var:
+ numero : int;
+ n1, n2 : int;
+ print ();
+ scanf(numero);
+ print(opa);
+ print ("Programa Media. Digite o valores?");
+ Scanf(n1);
+ print("fh");
 end

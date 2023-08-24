@@ -5,7 +5,7 @@ class analizadorSemantico(simplified_javaVisitor):
     funcTable = {}
 
     def __init__(self):
-        self.funcTable = {'main': {"funcType": 'void', "funcParameters": {}, "funcDecs": []}}
+        self.funcTable = {'main': {"funcType": 'void', "funcParameters": {}, "funcDecs": []}, 'print': {"funcType": 'void', "funcParameters": {"txt": 'str'}, "funcDecs": []}, 'scanf': {"funcType": 'void', "funcParameters": {"input": 'str'}, "funcDecs": []}}
 
     def defineType(self, value: str):
         if value == "true" or value == "false":

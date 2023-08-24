@@ -22,7 +22,7 @@ cmmd: if | assign | while | return | break | inst ';' ;
 inst: ID '(' instParamList? ')' ;
 instParamList: (instParam (',' instParam)* ) ;
 instParam: (ID | value | inst | exp ) ;
-/////
+
 assign: ID '=' exp ';'; // Erro de atribuição feito na semantica
 return: 'return' (ID | value | exp) ';';
 
@@ -37,7 +37,7 @@ exp: logic_exp | arith_exp ;
 
 logic_exp: logic_t | logic_exp 'or' logic_t ;
 logic_t: logic_f | logic_t 'and' logic_f ;
-logic_f: '!' logic_f | '(' logic_exp ')' | comparison ;
+logic_f: '!' logic_f | '(' logic_exp ')' | comparison | BOOL ;
 
 comparison: arith_exp comparison_op arith_exp ;
 comparison_op: '==' | '!=' | '<'| '>'| '<='| '=>' ;
