@@ -1,41 +1,43 @@
-fatorial (int fat) : int
-  x = fat * fatorial(fat - 1);
-  while(true):
-    print("zap");
-  end
-  if (false):
-    print (fat);
-    return fat * fatorial(fat - 1);
-  else:
-    return 1;
-end
-end
-mostrarMedia (int v1, int v2) : void
- var:
- x : float;
- y : int;
- x = (v1+v2)/2;
- x = print(0);
- t = 6 <= 7 ;
+exemplo(int n1) : int
+    var:
+        x : int;
 
-print (""); // top
+    while(true):
+        print("exemplo");
+    end
+
+    x = n1 * n1; // comentário de linha
+
+    /* comentário de bloco */
+
+    if(5 < 6):
+        return true;
+    else:
+        return false;
+    end
+
 end
-media (float n1, float n2) : float
- var:
- m : float;
- const PI = true;
- m = (n1 + n2)/2;
- return m;
+
+fazerMedia (int v1, int v2) : float
+    var:
+        media : float;
+
+    media = (v1+v2)/2;
+
+    return media;
+
 end
 
 main :
- var:
- numero : int;
- n1, n2 : int;
- print ();
- scanf(numero);
- print(opa);
- print ("Programa Media. Digite o valores?");
- Scanf(n1);
- print("fh");
+    var:
+        n1, n2 : int; // declarar mais de um número
+        const x = 5;
+
+    print ("Programa Media. Digite o valores");
+
+    scanf(n1);
+    scanf(n2);
+
+    fazerMedia(n1, n2);
+
 end

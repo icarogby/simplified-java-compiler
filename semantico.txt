@@ -1,9 +1,4 @@
-print e scantf ja estar na tabela de simbolos
-break dentro de while
-Instancia de função dentro de expressão tem que retornar int ou float
-verificação de parametros
-verificação de atribuição
-
+print e scantf já estão na tabela de símbolos
 Verifica se uma variável tem o mesmo nome de outra no mesmo escopo
 Verifica se uma função tem o mesmo nome de outra
 Verifica se um parametro tem o mesmo nome de outro dentro da mesma função
