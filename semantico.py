@@ -166,4 +166,4 @@ class analizadorSemantico(simplified_javaVisitor):
             return self.defineType(ctx.value().getText())
 
     def show(self):
-        print(self.funcTable)
+        return self.funcTable
